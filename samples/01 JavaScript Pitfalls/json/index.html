@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        if(typeof JSON == "undefined") {
+            window.JSON = {
+                stringify: function (obj) {
+                    return "xxx";
+                }
+            }
+        }
+
+        var obj = {
+            id: 1,
+            name: "Ori"
+        };
+
+        var str = JSON.stringify(obj);
+        console.log(str);
+    </script>
+</body>
+</html>
