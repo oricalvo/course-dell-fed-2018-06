@@ -8,6 +8,10 @@ app.get("/api/contact", function (req, res) {
         { id: 2, name: "Roni2" },
     ]);
 });
+app.delete("/api/contact/:id", function (req, res) {
+    console.log(req.params.id);
+    res.send({});
+});
 app.listen(3000, function () {
     console.log("Server is running on port 3000");
 });

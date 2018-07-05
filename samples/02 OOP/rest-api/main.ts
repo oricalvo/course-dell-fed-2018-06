@@ -9,6 +9,12 @@ app.get("/api/contact", function(req, res) {
     ]);
 });
 
+app.delete("/api/contact/:id", function(req, res) {
+    console.log(req.params.id);
+
+    res.send({});
+});
+
 app.listen(3000, function() {
     console.log("Server is running on port 3000");
 });
