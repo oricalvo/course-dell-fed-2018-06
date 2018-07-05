@@ -1,4 +1,7 @@
 try {
+    var pool = ObjectPool();
+    var pool2 = ObjectPool();
+
     var ori = {
         id: 1,
         name: "Ori",
@@ -9,15 +12,15 @@ try {
         name: "Ori",
     };
 
-    objectPool.add(ori);
-    objectPool.add(likeOri);
-    objectPool.add(ori);
+    pool.add(ori);
+    pool.add(likeOri);
+    pool.add(ori);
 
-    objectPool.get();
-    objectPool.get();
+    pool.get();
+    pool.get();
 
-    if (objectPool.count() != 0) {
-        throw new Error("FAILED");
+    if (pool.count() != 0) {
+        throw new Error("count is not ZERO as expected");
     }
 
     console.log("PASS");
