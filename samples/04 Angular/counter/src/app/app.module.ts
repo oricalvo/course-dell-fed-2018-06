@@ -2,18 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

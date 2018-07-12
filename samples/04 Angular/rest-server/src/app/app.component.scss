@@ -1,0 +1,13 @@
+$theme-color: red;
+
+:host {
+  background-color: blue;
+}
+
+ul {
+  color: $theme-color;
+}
+
+button {
+  color: $theme-color;
+}

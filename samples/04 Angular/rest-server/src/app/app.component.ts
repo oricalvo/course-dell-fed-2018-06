@@ -4,16 +4,21 @@ import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   contacts: Contact[];
   name: string;
+  showAdminSection: boolean = false;
 
-  constructor(httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {
     httpClient.get<Contact[]>("/api/contact").subscribe(contacts => {
       this.contacts = contacts;
     });
+  }
+
+  async ngOnInit() {
+    this.contacts = await this.httpClient.get<Contact[]>("/api/contact").toPromise();
   }
 
   add() {
@@ -23,6 +28,14 @@ export class AppComponent {
     };
 
     this.contacts.push(contact);
+  }
+
+  toggleAdminSection() {
+    this.showAdminSection = !this.showAdminSection;
+  }
+
+  get toggleAdminSectionButtonCaption() {
+    return this.showAdminSection ? "Hide Admin" : "Show Admin";
   }
 }
 

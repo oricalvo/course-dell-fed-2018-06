@@ -10,3 +10,9 @@
     <span>{{contact.name}}</span>
   </li>
 </ul>
+
+<button (click)="toggleAdminSection()">{{toggleAdminSectionButtonCaption}}</button>
+
+<div *ngIf="showAdminSection">
+  <h1>Admin</h1>
+</div>
