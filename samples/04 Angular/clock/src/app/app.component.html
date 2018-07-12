@@ -1,0 +1,12 @@
+
+<app-clock (tick)="onClockTick1($event)"
+           [format]="'HH'"></app-clock>
+<br/>
+<app-clock (tick)="onClockTick2($event)"
+           [format]="'HH:mm:ss'"></app-clock>
+
+<ul>
+  <li *ngFor="let contact of contacts">
+    <span>{{contact.name}}</span>
+  </li>
+</ul>
