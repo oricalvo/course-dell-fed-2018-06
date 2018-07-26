@@ -1,0 +1,12 @@
+<app-loading></app-loading>
+
+<h2>Number of contacts: <app-contact-count></app-contact-count> </h2>
+
+<button (click)="refresh()">Refresh</button>
+
+<span>{{counter}}</span>
+<button (click)="inc()">Inc</button>
+
+<app-contact-list [contacts]="contacts"></app-contact-list>
+
+<app-contact-new></app-contact-new>

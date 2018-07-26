@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: red;
+        }
+
+        .footer {
+            background-color: red;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .side-bar {
+            background-color: blue;
+            flex-shrink: 0;
+            padding: 1em;
+        }
+
+        .page {
+            background-color: yellow;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">H</div>
+    <div class="content">
+        <div class="side-bar">
+            <div>Add</div>
+            <div>Delete All</div>
+        </div>
+        <div class="page">P</div>
+    </div>
+    <div class="footer">F</div>
+</body>
+</html>

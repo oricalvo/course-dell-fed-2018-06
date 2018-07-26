@@ -1,0 +1,11 @@
+<div class="board">
+  <div *ngFor="let row of rows" class="row">
+    <div *ngFor="let cell of row.cells" class="cell" (click)="onCellClicked(cell)">
+      <span>{{cell.value}}</span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button (click)="newGame()">New Game</button>
+</div>

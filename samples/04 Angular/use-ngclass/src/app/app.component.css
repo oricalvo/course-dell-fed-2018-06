@@ -1,0 +1,21 @@
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 10em;
+}
+
+.menu li {
+  border-bottom: 1px solid lightgray;
+  padding: 1em;
+}
+
+.menu li:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.menu li.selected {
+  background-color: blue;
+}
+

@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let contact of contacts" (click)="gotoContactDetails(contact)">
+    <span>{{contact.name}}</span>
+  </li>
+</ul>
