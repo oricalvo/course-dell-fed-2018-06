@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "promise-polyfill": "^8.0.0",
+    "whatwg-fetch": "^2.0.4"
+  }
+}

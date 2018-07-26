@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="node_modules/promise-polyfill/dist/polyfill.js"></script>
+    <script src="node_modules/whatwg-fetch/fetch.js"></script>
+</head>
+<body>
+    <button>Get Data</button>
+
+    <script>
+        const button = document.querySelector("button");
+        if(!button) {
+            throw new Error("button was not found");
+        }
+
+        function getDataWithXHR() {
+            const xhr = new XMLHttpRequest();
+            // xhr.open("GET", "/api/contact");
+            xhr.open("GET", "contacts.json");
+            xhr.send();
+
+            xhr.addEventListener("readystatechange", function() {
+                console.log("readystatechange", xhr.readyState);
+
+                if(xhr.readyState == 4) {
+                    console.log("status", xhr.status);
+                    console.log("responseText", xhr.responseText);
+                }
+            });
+        }
+
+        function getDataFetchAPI() {
+            fetch("contacts.json").then(function(res) {
+                res.json().then(function(json) {
+                    console.log(json);
+                });
+            });
+
+            // const res = await fetch("contacts.json");
+            // const json = await res.json();
+            // console.log(json);
+        }
+
+        // button.addEventListener("click", getDataWithXHR);
+        button.addEventListener("click", getDataFetchAPI);
+    </script>
+</body>
+</html>
